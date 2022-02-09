@@ -1,0 +1,28 @@
+.title_div button {
+  background-color: #2baeb7;
+  color: white;
+  border-radius: 5px;
+  height: 45px;
+  width: 147px;
+}
+.banner_div img {
+  width: 100%;
+  height: 455px;
+  object-fit: cover;
+}
+.absolute_div {
+  position: absolute;
+}
+.relative_div {
+  position: relative;
+}
+
+.item_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.item_div img {
+  height: 426px;
+  width: 235px;
+}

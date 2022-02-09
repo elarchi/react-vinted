@@ -1,4 +1,6 @@
 import "./App.css";
+import "./assets/css/home.css";
+import "./assets/css/offer.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";

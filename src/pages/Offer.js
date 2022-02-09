@@ -2,6 +2,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 const Offer = () => {
   //il faut importer de la data de l'API et la stocker:
@@ -32,31 +33,36 @@ const Offer = () => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div className="offer-content_div">
-      <img src={data.product_image.secure_url} alt={data.product_name} />
-      {/* <div>L'id du produit est : {id}</div>
+    <div>
+      <Header />
+      <div className="background-grey_div">
+        <div className="offer-content_div container">
+          <img src={data.product_image.secure_url} alt={data.product_name} />
+          {/* <div>L'id du produit est : {id}</div>
       <span>{data.product_name}</span> */}
-      <div className="text-product_div">
-        <span>{data.product_price} €</span>
-        <div className="details-product_div">
-          <div className="title-details-product_div">
-            <span>MARQUE</span>
-            <span>TAILLE</span>
-            <span>ETAT</span>
-            <span>COULEUR</span>
-            <span>EMPLACEMENT</span>
-            <span>MODE DE PAIEMENT</span>
-          </div>
-          <div className="content-details-product_div">
-            {data.product_details.map((detailTitle, index) => {
-              return <span>{detailTitle.MARQUE}</span>;
-            })}
+          <div className="text-product_div">
+            <span>{data.product_price} €</span>
+            <div className="details-product_div">
+              <div className="title-details-product_div">
+                <span>MARQUE</span>
+                <span>TAILLE</span>
+                <span>ETAT</span>
+                <span>COULEUR</span>
+                <span>EMPLACEMENT</span>
+                <span>MODE DE PAIEMENT</span>
+              </div>
+              <div className="content-details-product_div">
+                {data.product_details.map((detailTitle, index) => {
+                  return <span>{detailTitle.MARQUE}</span>;
+                })}
+              </div>
+            </div>
+            <span>{data.product_name}</span>
+            <span>{data.product_description}</span>
+            <span>{data.owner.account.username}</span>
+            <button>Acheter</button>
           </div>
         </div>
-        <span>{data.product_name}</span>
-        <span>{data.product_description}</span>
-        <span>{data.owner.account.username}</span>
-        <button>Acheter</button>
       </div>
     </div>
   );

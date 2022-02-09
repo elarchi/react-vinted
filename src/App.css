@@ -1,5 +1,10 @@
+body {
+  /* background-color: #ebedee; */
+  background-color: white;
+}
+
 .container {
-  width: 1189px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -7,29 +12,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-}
-
-.item_div {
-  display: flex;
-  flex-direction: column;
-}
-
-.item_div img {
-  height: 426px;
-  width: 235px;
-}
-
-.offer-content_div {
-  display: flex;
-}
-
-.text-product_div {
-  display: flex;
-  flex-direction: column;
-  background-color: orange;
-}
-
-.title-details-product_div {
-  display: flex;
-  flex-direction: column;
 }

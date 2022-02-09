@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../components/Title";
+import Header from "../components/Header";
+import banner from "../assets/img/banner.jpg";
 
 const Home = ({}) => {
   //il faut importer de la data de l'API et la stocker:
@@ -32,10 +34,19 @@ const Home = ({}) => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div className="container">
-      <Title />
+    <div>
+      <Header />
+      <div className="banner_div">
+        <div className="image-banner_div">
+          <img src={banner} alt="Banner vinted absolute" />
+          <div className="relative_div">
+            <Title />
+          </div>
+        </div>
+      </div>
+
       {/* affichage des noms des articles */}
-      <div className="content-home_div">
+      <div className="content-home_div container">
         {data.offers.map((offer, index) => {
           // console.log("offer ===>", offer);
           console.log(
