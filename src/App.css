@@ -18,3 +18,18 @@
   height: 426px;
   width: 235px;
 }
+
+.offer-content_div {
+  display: flex;
+}
+
+.text-product_div {
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+}
+
+.title-details-product_div {
+  display: flex;
+  flex-direction: column;
+}

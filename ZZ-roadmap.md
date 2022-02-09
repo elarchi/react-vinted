@@ -44,11 +44,11 @@ OK.
 
 Je veux pouvoir avoir le même affichage que sur vinter-app du reacteur soit :
 
-- l'image du produit
+- l'image du produit : OK
 - une div avec:
-  - le prix
+  - le prix :OK
   - une div de détails
-    - une div des titres des détails
+    - une div des titres des détails : OK
       - marque
       - taille
       - état
