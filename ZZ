@@ -1,0 +1,20 @@
+j'ai ma structure principale : App.js
+Avec 2 Routes : Home/Offer.
+OK.
+
+j'arrive à bien passer des props et des params entre les pages.
+OK. 
+
+Dans HOME 
+je veux la liste des offres de l'API
+> requête AXIOS
+OK.
+
+
+Mettre en place le système de isLoading.
+OK.
+
+je veux afficher toutes les offres sur la page Home.
+> map sur mon API et récupération des titres pour les afficher
+
+
