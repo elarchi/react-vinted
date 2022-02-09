@@ -32,28 +32,33 @@ const Home = ({}) => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <div>
+    <div className="container">
       <Title />
       {/* affichage des noms des articles */}
-      {data.offers.map((offer, index) => {
-        // console.log("offer ===>", offer);
-        console.log(
-          "offer.product_pictures.url===>",
-          offer.product_pictures.url
-        );
-        return (
-          <Link to={`/offer/${offer._id}`}>
-            <div>
-              <span>{offer.owner.account.username}</span>
-              <img src={offer.product_pictures.url} alt={offer.product_name} />
-              <span>{offer.product_price}</span>
-              <span>{offer.product_details.TAILLE}</span>
-              {offer.product_name}
-              <span>{offer.product_details.MARQUE}</span>
-            </div>
-          </Link>
-        );
-      })}
+      <div className="content-home_div">
+        {data.offers.map((offer, index) => {
+          // console.log("offer ===>", offer);
+          console.log(
+            "offer.product_pictures.url===>",
+            offer.product_pictures.url
+          );
+          return (
+            <Link to={`/offer/${offer._id}`}>
+              <div className="item_div">
+                <span>{offer.owner.account.username}</span>
+                <img
+                  src={offer.product_image.secure_url}
+                  alt={offer.product_name}
+                />
+                <span>{offer.product_price}</span>
+                <span>{offer.product_details.TAILLE}</span>
+                {offer.product_name}
+                <span>{offer.product_details.MARQUE}</span>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

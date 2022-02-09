@@ -1,5 +1,5 @@
 const Title = () => {
-  return <div>Title de la page</div>;
+  return <h1>Title de la page</h1>;
 };
 
 export default Title;

@@ -34,8 +34,8 @@ const Offer = () => {
   ) : (
     <div>
       {/* <img src="" alt="" /> */}
-      {/* <div>L'id du produit est : {id}</div> */}
-      <p>{data}</p>
+      <div>L'id du produit est : {id}</div>
+      <span>{data.product_name}</span>
     </div>
   );
 };

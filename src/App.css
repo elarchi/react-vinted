@@ -1,0 +1,20 @@
+.container {
+  width: 1189px;
+  margin: 0 auto;
+}
+
+.content-home_div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.item_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.item_div img {
+  height: 426px;
+  width: 235px;
+}
