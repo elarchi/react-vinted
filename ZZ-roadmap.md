@@ -128,3 +128,14 @@ OK.
 
 Gérons les fonctions pour écouter les modifications d'état des différents champs du form.
 OK.
+
+Je récupère bien les données de mon form.
+OK.
+
+PAS BESOIN DE USEEFFECT SUR CE FORM, PAS BESOIN D'ATTENDRE UN LOADING, ON NE CHARGE PAS DE DATA. ON ENVOIE !
+
+Donc, quand j'envoie mes infos user, je reçois un token.
+OK.
+
+Occupons nous désormais de login.
+Faisons fonctionner les différents champs de son form.

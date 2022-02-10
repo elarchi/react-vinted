@@ -1,7 +1,9 @@
 import vintedlogo from "../assets/img/vintedlogo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="header_div header-container">
       <Link to={"/"}>
@@ -16,9 +18,21 @@ const Header = () => {
       <Link to={"/signup"}>
         <button>S'inscrire</button>
       </Link>
-      <Link to={"/login"}>
-        <button>Se connecter</button>
-      </Link>
+
+      {Cookies.get("tokenUser") ? (
+        <button
+          onClick={() => {
+            Cookies.remove("tokenUser");
+            navigate("/");
+          }}
+        >
+          Se déconnecter
+        </button>
+      ) : (
+        <Link to={"/login"}>
+          <button>Se connecter</button>
+        </Link>
+      )}
 
       <button>Vends tes articles</button>
     </div>

@@ -1,12 +1,16 @@
 import Header from "../components/Header.js";
 // imports pour effectuer la requête axios.post
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+//importation library js-cookie
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
+  const navigate = useNavigate();
+  const [token, setToken] = useState();
 
   // créons des états pour écouter les modifications des inputs
 
@@ -15,34 +19,30 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
 
-  // mise en place du useEffect pour écouter le cycle de vie  du composant data
+  // créons une fonction pour submit le form, en gardant les données, sans rafraîchir la page
 
-  useEffect(() => {
-    const sendData = async () => {
-      try {
-        const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-          {
-            email: email,
-            password: password,
-            username: username,
-            newsletter: newsletter,
-          }
-        );
-        console.log(response.data);
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.response);
-      }
-    };
-    sendData();
-  }, []);
-
-  // créons une fonction pour submit le form, en gardans les données, sans rafraîchir la page
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: email,
+          password: password,
+          username: username,
+          newsletter: newsletter,
+        }
+      );
+      console.log(response.data);
+      setData(response.data);
+      // on set un cookie, avec son nom et sa valeur
+      Cookies.set("tokenUser", response.data.token);
+      setToken(response.data.token);
+      navigate("/");
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   //créons une fonction qui change l'état de newsletter
@@ -54,9 +54,7 @@ const Signup = () => {
     }
   };
 
-  return isLoading ? (
-    <span>En cours de chargement...</span>
-  ) : (
+  return (
     <div>
       <Header />
       <div>
@@ -80,14 +78,19 @@ const Signup = () => {
             placeholder="Mot de passe"
             onChange={(event) => setPassword(event.target.value)}
           />
-          <input type="checkbox" onClick={handleCheckbox} />
+          <input
+            type="checkbox"
+            onClick={handleCheckbox}
+            defaultChecked={newsletter}
+            value={newsletter}
+          />
           <h3>S'inscrire à notre newsletter</h3>
           <p>
             En m'inscrivant je confirme avoir lu et accepté les Termes &
             Conditions de Politique de Confidentialité de Vinted. Je confirme
             avoir au moins 18 ans.
           </p>
-          <button>S'inscrire</button>
+          <input type="submit" value={"S'inscrire"} />
           <Link to={"/login"}>
             <p>Tu as déjà un compte ? Connecte-toi !</p>
           </Link>
