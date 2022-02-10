@@ -46,6 +46,7 @@ Je veux pouvoir avoir le même affichage que sur vinter-app du reacteur soit :
 
 - l'image du produit : OK
 - une div avec:
+
   - le prix :OK
   - une div de détails
     - une div des titres des détails : OK
@@ -55,8 +56,62 @@ Je veux pouvoir avoir le même affichage que sur vinter-app du reacteur soit :
       - couleur
       - emplacement
       - modes de paiement
-    - une div avec les détails entrés
-  - le nom du produit
-  - la description du produit
-  - le nom du vendeur
-  - un bouton acheter
+    - une div avec les détails entrés : OK.
+  - le nom du produit : OK.
+  - la description du produit OK.
+  - le nom du vendeur OK.
+  - un bouton acheter OK.
+
+    OK.
+
+# page signup
+
+Page pour s'inscrire
+On entre son nom d'utilisateur, son mail, son mdp, et on coche si oui (true) ou non (false) on veut s'inscrire à la newsletter.
+On clique sur le bouton s'inscire pour submit le form.
+Il y a un lien sous le bouton dans le cas où on a déjà un compte.
+
+Créons 2 pages : signup / login
+OK.
+
+Verifions les liens.
+OK.
+
+Dans le header.
+Quand tu cliques sur s'inscrire, tu tomnbes sur la page sigup.
+Quand tu cliques sur se connectuer, tu tombes sur la page login.
+OK.
+
+# Dans la page signup.
+
+# On veut mettre en place un formulaire.
+
+OK : D'abord, les visuels (sans css).
+
+OK : Créons visuellement les champs du formulaire :
+OK : 1 titre
+OK : 3 inputs
+
+- nom d'utilisateur
+- email
+- mot de passe
+
+OK : 1 checkbox et un text newsletter
+OK : 1 button s'inscrire
+OK : 1 link vers login page
+
+OK : Créons visuellement les champs du form login :
+OK : 1 titre
+OK : 1 input mail
+OK : 1 input mpd
+OK : 1 button
+OK : 1 link
+
+Que faut-il faire avec ces 2 pages ?
+
+Lorsque je me connecte, il faut que le mdp soit bien dans la base de donnée. ===> authentification.
+Si oui, alors je donne un cookie (mon token).
+Le bouton 'se connecter' se change en 'se déconnecter' et ce nouveau boutton a pour action de supprimer le cookie.
+
+Lorsque je m'inscris, il faut que je garde mes données user dans ma base de donnée.
+J'oriente ensuite vers la page login.
