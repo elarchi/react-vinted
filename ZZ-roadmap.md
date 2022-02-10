@@ -109,9 +109,22 @@ OK : 1 link
 
 Que faut-il faire avec ces 2 pages ?
 
+Lorsque je m'inscris, il faut que je garde mes données user dans ma base de donnée.
+J'oriente ensuite vers la page login.
+
 Lorsque je me connecte, il faut que le mdp soit bien dans la base de donnée. ===> authentification.
 Si oui, alors je donne un cookie (mon token).
 Le bouton 'se connecter' se change en 'se déconnecter' et ce nouveau boutton a pour action de supprimer le cookie.
 
-Lorsque je m'inscris, il faut que je garde mes données user dans ma base de donnée.
-J'oriente ensuite vers la page login.
+Commençons par créer une requete axios.post vers l'API.
+Vu qu'on utilise la méthode post, il faut lui donner du body à process.
+{
+email: email,
+password: password,
+username: username,
+newsletter: checked,
+}
+OK.
+
+Gérons les fonctions pour écouter les modifications d'état des différents champs du form.
+OK.
