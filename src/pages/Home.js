@@ -1,18 +1,29 @@
-// import of axios to do some API's request
+// IMPORTATIONS ...
+
+// .. de la librairie axios pour faire une requête de type POST afin d'envoyer de la data à notre API:
+
 import axios from "axios";
+
+// .. de useEffect de la librairie react pour mettre en place un chargement lors de la récupération de la data, et de useState pour la stocker:
+
 import { useEffect, useState } from "react";
+
+// ... de la librairie de navigation "react-router-dom":
+
 import { Link } from "react-router-dom";
-import Title from "../components/Title";
-import Header from "../components/Header";
-import banner from "../assets/img/banner.jpg";
+
+// ... des composants du projet:
+
+import Hero from "../components/Hero";
 
 const Home = ({}) => {
-  //il faut importer de la data de l'API et la stocker:
   const [data, setData] = useState();
+  // state pour stocker de la data
+
   const [isLoading, setIsLoading] = useState(true);
+  // state pour attendre son chargement complet
 
   useEffect(() => {
-    // fonction a effectuer à chaque arrivée sur la page
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -29,32 +40,21 @@ const Home = ({}) => {
   }, []);
   // on utilise un tab vide dans le useEffet pour effectuer cette action au composant une seule fois, à sa création
 
-  const id = "9402942095205920520";
-
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
     <div>
-      <Header />
-      <div className="banner_div">
-        <div className="image-banner_div">
-          <img src={banner} alt="Banner vinted absolute" />
-          <div className="relative_div">
-            <Title />
-          </div>
-        </div>
-      </div>
-
+      <Hero />
       {/* affichage des noms des articles */}
       <div className="content-home_div container">
-        {data.offers.map((offer, index) => {
+        {data.offers.map((offer) => {
           // console.log("offer ===>", offer);
           console.log(
             "offer.product_pictures.url===>",
             offer.product_pictures.url
           );
           return (
-            <Link to={`/offer/${offer._id}`}>
+            <Link key={offer._id} to={`/offer/${offer._id}`}>
               <div className="item_div">
                 <span>{offer.owner.account.username}</span>
                 <img
