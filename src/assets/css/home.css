@@ -5,17 +5,6 @@
   height: 45px;
   width: 147px;
 }
-.banner_div img {
-  width: 100%;
-  height: 455px;
-  object-fit: cover;
-}
-.absolute_div {
-  position: absolute;
-}
-.relative_div {
-  position: relative;
-}
 
 .item_div {
   display: flex;

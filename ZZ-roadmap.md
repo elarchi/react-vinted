@@ -143,6 +143,8 @@ OK.
 
 # MOMENT CSS
 
+## Header
+
 Commençons par le bandeau du header.
 
 Trions les div.
@@ -152,5 +154,34 @@ header :
 - div container
   - div logo
   - div filters
-  - div connexion
-  - div poster une offre
+  - div navigation - div connexion - div poster une offre
+    OK.
+
+Mettre la loupe dans le champs de recherche.
+NON.
+
+Créer la barre de filters.
+NON.
+
+## home
+
+### Hero
+
+Trions les div.
+
+hero_div :
+
+- une img banner
+- une div prêts à faire du tri ?
+  - titre
+  - button
+- une img effet torn
+  OK.
+
+Plaçons les titles sur l'image.
+Relative/absolute.
+OK.
+
+Plaçons l'effet torn sur l'image.
+Relative/absolute.
+bottom 0.
