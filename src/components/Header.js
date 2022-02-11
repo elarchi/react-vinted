@@ -1,8 +1,9 @@
 // IMPORTATIONS ...
 
-// ... des images de la page :
+// ... des images de la page
 
 import vintedlogo from "../assets/img/vintedlogo.png";
+import magnifyingGlass from "../assets/img/magnifyingGlass.svg";
 
 // ... de la librairie react-router-dom pour mettre en place de la navigation :
 
@@ -13,33 +14,47 @@ const Header = ({ token, setUser }) => {
 
   return (
     <div className="header_div header-container">
-      <Link to={"/"}>
-        <img src={vintedlogo} alt="Logo Vinted" />
-      </Link>
-      <input
-        className="search-bar_input"
-        type="text"
-        placeholder="🔍 Recherche des articles"
-      />
-      {/* Si l'utilisateur a un token c'est qu'il s'est déjà log (soit en créant son compte, soit via la page login). Il ne lui reste donc plus qu'à se déconnecter à la fin de sa session. */}
-      {token ? (
-        <button
-          onClick={() => {
-            setUser(null);
-            // On attribut comme valeur au token null pour passer dans les conditions voulues dans app.js
-            navigate("/");
-          }}
-        >
-          Se déconnecter
-        </button>
-      ) : (
-        <div>
-          <Link to={"/signup"}>S'inscrire</Link>
-          <Link to={"/login"}>Se connecter</Link>
-        </div>
-      )}
+      <div className="header-logo_div">
+        <Link to={"/"}>
+          <img src={vintedlogo} alt="Logo Vinted" />
+        </Link>
+      </div>
 
-      <button>Vends tes articles</button>
+      <div className="header-filters_div">
+        <input
+          className="header-filters-searchBar_input"
+          type="text"
+          placeholder="🔍 Recherche des articles"
+        />
+      </div>
+
+      <div className="header-connexions_div">
+        {/* Si l'utilisateur a un token c'est qu'il s'est déjà log (soit en créant son compte, soit via la page login). Il ne lui reste donc plus qu'à se déconnecter à la fin de sa session. */}
+        {token ? (
+          <button
+            onClick={() => {
+              setUser(null);
+              // On attribut comme valeur au token null pour passer dans les conditions voulues dans app.js
+              navigate("/");
+            }}
+          >
+            Se déconnecter
+          </button>
+        ) : (
+          <div className="header-connexions_div">
+            <Link className={"header-connexions_link"} to={"/signup"}>
+              S'inscrire
+            </Link>
+            <Link className={"header-connexions_link"} to={"/login"}>
+              Se connecter
+            </Link>
+          </div>
+        )}
+      </div>
+
+      <div className="header-postAnOffer_div">
+        <button>Vends tes articles</button>
+      </div>
     </div>
   );
 };

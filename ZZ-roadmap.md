@@ -139,3 +139,18 @@ OK.
 
 Occupons nous désormais de login.
 Faisons fonctionner les différents champs de son form.
+OK.
+
+# MOMENT CSS
+
+Commençons par le bandeau du header.
+
+Trions les div.
+
+header :
+
+- div container
+  - div logo
+  - div filters
+  - div connexion
+  - div poster une offre

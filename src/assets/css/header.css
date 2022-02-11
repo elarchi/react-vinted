@@ -1,0 +1,59 @@
+.header_div {
+  background-color: white;
+  height: 120px;
+  gap: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  width: 1280px;
+  margin: 0 auto; /* Pour centrer le container. */
+}
+
+.header-logo_div img {
+  height: 45px;
+  width: 104px;
+}
+
+.header-filters-searchBar_input {
+  background-color: #f5f6f7;
+  width: 632px;
+  height: 39px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.header-connexions_div {
+  display: flex;
+  gap: 20px;
+}
+
+.header-connexions_link {
+  border: solid 1px #2cb1ba;
+  border-radius: 5px;
+  width: 115px;
+  height: 30px;
+  color: #2cb1ba;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.header-postAnOffer_div button {
+  border: none;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  width: 115px;
+  height: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+}
