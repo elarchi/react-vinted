@@ -35,20 +35,15 @@ function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
   // création d'un état pour pouvoir rafraîchir les composants comportants token
 
-  /* 
-  CREATION D'UNE FONCTION POUR SET/REMOVE LE TOKEN :
-
-  Mise en place d'une condition pour choisir de set ou remove le token.
-
-  Lorsque l'utilisateur se log ou crée un compte, soit lorsqu'il s'authentifie, il reçoit un token qu'il faut set dans les cookies.
-
-  Lorsque l'utilisateur cherche à se déconnecter, il faut lui retirer son token d'accès au reste du site, soit retirer le token des cookies.
-  */
+  // CREATION D'UNE FONCTION POUR SET/REMOVE LE TOKEN :
 
   const setUser = (token) => {
+    // Mise en place d'une condition pour choisir de set ou remove le token.
     if (token) {
+      // Lorsque l'utilisateur se log ou crée un compte, soit lorsqu'il s'authentifie, il reçoit un token qu'il faut set dans les cookies.
       Cookies.set("useToken", token, { expires: 10 });
     } else {
+      // Lorsque l'utilisateur cherche à se déconnecter, il faut lui retirer son token d'accès au reste du site, soit retirer le token des cookies.
       Cookies.remove("userToken");
     }
     setToken(token);
@@ -56,16 +51,19 @@ function App() {
 
   return (
     <div className="App">
-      {/* STRUCTURE DU SITE :
-Router is the navigation parent's
-Routes contains the page's list
-Route is the component that contains the page */}
+      {/* STRUCTURE DU SITE : */}
 
       <Router>
+        {/* Router is the navigation parent's */}
         <Header setUser={setUser} token={token} />
         {/* On place le Header en dehors des Routes car il est commun aux différentes pages. */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* Routes contains the page's list */}
+          <Route
+            // Route is the component that contains the page
+            path="/"
+            element={<Home />}
+          />
           <Route path="/offer/:id" element={<Offer />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
