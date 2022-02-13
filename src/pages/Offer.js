@@ -12,6 +12,10 @@ import axios from "axios";
 
 import { useState, useEffect } from "react";
 
+// ... de la librairie de navigation "react-router-dom":
+
+import { Link } from "react-router-dom";
+
 const Offer = () => {
   const [data, setData] = useState();
   // Pour stoker de la data
@@ -45,35 +49,63 @@ const Offer = () => {
     <span>En cours de chargement...</span>
   ) : (
     <div>
-      <div className="background-grey_div">
-        <div className="offer-content_div container">
-          <img src={data.product_image.secure_url} alt={data.product_name} />
+      <div className="offer_div">
+        <div className="offer-picture_div">
+          <img
+            className="offer_img"
+            src={data.product_image.secure_url}
+            alt={data.product_name}
+          />
+        </div>
 
-          <div className="text-product_div">
-            {data.product_details.map((item, index) => {
-              const keys = Object.keys(item);
-              return (
-                <div key={index}>
-                  <span>
-                    {keys[0]} : {item[keys[0]]}
-                  </span>
-                </div>
-              );
-            })}
+        <div className="offer-infos_div  ">
+          <span className="offer-infos-price_span ">
+            {data.product_price} €
+          </span>
 
-            <span>{data.product_price} €</span>
-
-            <div className="details-product_div">
-              <div className="content-details-product_div">
-                {data.product_details.map((detailTitle, index) => {
-                  return <span>{detailTitle.MARQUE}</span>;
-                })}
-              </div>
+          <div className="offer-infos-list_div">
+            <div className="offer-infos-list-leftSide_div">
+              {data.product_details.map((elem, index) => {
+                const keys = Object.keys(elem);
+                return (
+                  <div key={index}>
+                    <div>
+                      <span>{keys[0]}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <span>{data.product_name}</span>
+            <div className="offer-infos-list-rightSide_div">
+              {data.product_details.map((elem, index) => {
+                const keys = Object.keys(elem);
+                return (
+                  <div key={index}>
+                    <div>
+                      <span>{elem[keys[0]]}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <span className="offer-infos-name_span">{data.product_name}</span>
+          <div className="offer-infos-descriptions_div">
             <span>{data.product_description}</span>
-            <span>{data.owner.account.username}</span>
-            <button>Acheter</button>
+            <div className="offer-infos-user_div">
+              <img
+                className="offer-infos-avatar_img"
+                src={data.owner.account.avatar.secure_url}
+                alt="avatar's user"
+              />
+              <span>{data.owner.account.username}</span>
+            </div>
+          </div>
+          <div className="offer-infos-button_div">
+            <Link className="offer-infos_button" to="/">
+              Acheter
+            </Link>
           </div>
         </div>
       </div>

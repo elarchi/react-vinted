@@ -5,8 +5,10 @@
 import "./App.css";
 import "./assets/css/home.css";
 import "./assets/css/offer.css";
+import "./assets/css/signup.css";
 import "./assets/css/header.css";
 import "./assets/css/hero.css";
+import "./assets/css/login.css";
 
 // ... de la librairie react-router-dom pour faire de la navigation :
 

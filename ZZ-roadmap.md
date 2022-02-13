@@ -185,3 +185,37 @@ OK.
 Plaçons l'effet torn sur l'image.
 Relative/absolute.
 bottom 0.
+NON.
+
+# home content
+
+Trions les div.
+
+- une div
+  - div de cartes container
+    - div user
+      - avatar
+      - nom user
+    - picture
+    - prix
+    - taille
+    - marque
+
+OK.
+
+# offer
+
+trier les div
+
+OK : main div :
+
+- OK : img produit
+- div details tech
+  - le prix
+  - div caractéristiques
+  - titre produit
+  - text descriptif
+  - div user
+    - avatar
+    - username
+  - button acheter

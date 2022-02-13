@@ -49,32 +49,40 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <h2>Se connecter</h2>
+    <div className="login_div">
+      <h2>Se connecter</h2>
+      <form className="login_form " onSubmit={handleSubmit}>
+        <div className="login-form-fields-input_div">
           <input
+            className="login-form-fields_input"
             type="email"
             placeholder="Adresse mail"
             onChange={(event) => setEmail(event.target.value)}
           />
 
           <input
+            className="login-form-fields_input"
             type="password"
             placeholder="Mot de passe"
             onChange={(event) => {
               setPassword(event.target.value);
             }}
           />
+        </div>
+        <div className="login-form-links_div">
+          <div className="login-form-links-link_div">
+            <Link to="/" className="login-form-links-submit_link" type="submit">
+              Se connecter
+            </Link>
+          </div>
 
-          <input type="submit" value="Se Connecter" />
           <span>{errorMessage}</span>
 
-          <Link to={"/login"}>
+          <Link to={"/login"} className="login-form-links-signup_link">
             <p>Pas encore de compte ? Inscris-toi !</p>
           </Link>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };

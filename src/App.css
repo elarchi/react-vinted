@@ -1,17 +1,12 @@
 body {
   /* background-color: #ebedee; */
-  background-color: white;
-
+  /* background-color: white; */
+  /* background-color: grey; */
   font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
 .container {
   width: 1280px;
   margin: 0 auto;
-}
-
-.content-home_div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
 }

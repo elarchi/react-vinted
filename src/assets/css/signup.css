@@ -1,0 +1,93 @@
+.signup-form_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form_div h2 {
+  font-size: 24px;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: black 3px solid; */
+  width: 275px;
+  gap: 20px;
+}
+
+.signup-form-fields_input {
+  border: none;
+  width: 275px;
+  height: 38px;
+  border-bottom: 1px solid #fcced3;
+  color: rgb(202, 199, 199);
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+.signup-newsletter_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-newsletter-check_div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.signup-newsletter_div h3 {
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+}
+
+.signup-form-checkbox_input {
+  height: 26px;
+  width: 26px;
+  /* border: solid pink 3px; */
+  border: solid #999 3px;
+}
+
+.signup-form p {
+  color: #999;
+  margin: 5 0;
+  font-size: 12px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.signup-form-links_div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+.signup-form-submit_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  /* border: black solid 3px; */
+  background-color: #2cb1ba;
+  border-radius: 5px;
+}
+.signup-form-submit-button_link {
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+.signup-form-login_link {
+  text-decoration: none;
+  color: #2cb1ba;
+  font-size: 12px;
+}

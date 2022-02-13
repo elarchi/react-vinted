@@ -45,7 +45,12 @@
   font-size: 12px;
 }
 
-.header-postAnOffer_div button {
+.header-posting_div {
+  width: 115px;
+  height: 30px;
+}
+
+.header-posting_link {
   border: none;
   background-color: #2cb1ba;
   border-radius: 5px;

@@ -46,29 +46,53 @@ const Home = ({}) => {
     <div>
       <Hero />
       {/* affichage des noms des articles */}
-      <div className="content-home_div container">
-        {data.offers.map((offer) => {
-          // console.log("offer ===>", offer);
-          console.log(
-            "offer.product_pictures.url===>",
-            offer.product_pictures.url
-          );
-          return (
-            <Link key={offer._id} to={`/offer/${offer._id}`}>
-              <div className="item_div">
-                <span>{offer.owner.account.username}</span>
-                <img
-                  src={offer.product_image.secure_url}
-                  alt={offer.product_name}
-                />
-                <span>{offer.product_price}</span>
-                <span>{offer.product_details.TAILLE}</span>
-                {offer.product_name}
-                <span>{offer.product_details.MARQUE}</span>
-              </div>
-            </Link>
-          );
-        })}
+      <div className="home-content_div">
+        <div className="home-items_div container">
+          {data.offers.map((offer) => {
+            // console.log("offer ===>", offer);
+            console.log(
+              "offer.product_pictures.url===>",
+              offer.product_pictures.url
+            );
+            return (
+              <Link
+                className="home_link"
+                key={offer._id}
+                to={`/offer/${offer._id}`}
+              >
+                <div className="home-item_div">
+                  <div className="home-item-user_div">
+                    <img
+                      className="home-item-avatar_img"
+                      src={offer.owner.account.avatar.secure_url}
+                      alt=""
+                    />
+                    <span>{offer.owner.account.username}</span>
+                  </div>
+
+                  <img
+                    className="home-item-product_img"
+                    src={offer.product_image.secure_url}
+                    alt={offer.product_name}
+                  />
+                  <div className="home-item-details_div">
+                    <span className="home-item-details-price_span">
+                      {offer.product_price} €
+                    </span>
+                    {offer.product_details.map((elem, index) => {
+                      return (
+                        <div key={index}>
+                          <span>{elem.TAILLE}</span>
+                          <span>{elem.MARQUE}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

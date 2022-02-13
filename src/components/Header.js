@@ -52,8 +52,11 @@ const Header = ({ token, setUser }) => {
         )}
       </div>
 
-      <div className="header-postAnOffer_div">
-        <button>Vends tes articles</button>
+      <div className="header-posting_div">
+        <Link to={"/"} className="header-posting_link">
+          Vends tes articles
+        </Link>
+        {/* <button>Vends tes articles</button> */}
       </div>
     </div>
   );

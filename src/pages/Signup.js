@@ -74,39 +74,63 @@ const Signup = ({ setUser }) => {
 
   return (
     <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <h2>S'inscrire</h2>
-          <input
-            type="text"
-            placeholder="Nom d'Utilisateur"
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <input
-            type="checkbox"
-            onClick={(event) => setNewsletter(event.target.checked)}
-          />
-          <h3>S'inscrire à notre newsletter</h3>
-          <p>
-            En m'inscrivant je confirme avoir lu et accepté les Termes &
-            Conditions de Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
-          <input type="submit" value={"S'inscrire"} />
-          <span>{errorMessage}</span>
-          <Link to={"/login"}>
-            <p>Tu as déjà un compte ? Connecte-toi !</p>
-          </Link>
+      <div className="signup-form_div">
+        <h2>S'inscrire</h2>
+        <form onSubmit={handleSubmit} className="signup-form">
+          <div className="signup-form-fields_div">
+            <input
+              className="signup-form-fields_input"
+              type="text"
+              placeholder="Nom d'Utilisateur"
+              onChange={(event) => setUsername(event.target.value)}
+            />
+            <input
+              className="signup-form-fields_input"
+              type="email"
+              placeholder="Email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <input
+              className="signup-form-fields_input"
+              type="password"
+              placeholder="Mot de passe"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+
+          <div className="signup-newsletter_div">
+            <div className="signup-newsletter-check_div">
+              <input
+                className="signup-form-checkbox_input"
+                type="checkbox"
+                onClick={(event) => setNewsletter(event.target.checked)}
+              />
+              <h3>S'inscrire à notre newsletter</h3>
+            </div>
+
+            <p>
+              En m'inscrivant je confirme avoir lu et accepté les Termes &
+              Conditions de Politique de Confidentialité de Vinted. Je confirme
+              avoir au moins 18 ans.
+            </p>
+          </div>
+
+          <div className="signup-form-links_div">
+            <div className="signup-form-submit_div">
+              <Link
+                className="signup-form-submit-button_link"
+                type="submit"
+                to="/"
+              >
+                S'inscrire
+              </Link>
+            </div>
+
+            <span>{errorMessage}</span>
+            <Link className="signup-form-login_link" to={"/login"}>
+              Tu as déjà un compte ? Connecte-toi !
+            </Link>
+          </div>
         </form>
       </div>
     </div>
