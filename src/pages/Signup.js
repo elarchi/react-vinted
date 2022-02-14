@@ -77,6 +77,7 @@ const Signup = ({ setUser }) => {
       <div className="signup-form_div">
         <h2>S'inscrire</h2>
         <form onSubmit={handleSubmit} className="signup-form">
+          {/* =============================== FIELDS's FORM */}
           <div className="signup-form-fields_div">
             <input
               className="signup-form-fields_input"
@@ -98,6 +99,7 @@ const Signup = ({ setUser }) => {
             />
           </div>
 
+          {/* ============================ NEWSLETTER's FORM */}
           <div className="signup-newsletter_div">
             <div className="signup-newsletter-check_div">
               <input
@@ -115,6 +117,7 @@ const Signup = ({ setUser }) => {
             </p>
           </div>
 
+          {/* =============================== LINKS's FORM */}
           <div className="signup-form-links_div">
             <div className="signup-form-submit_div">
               <Link
@@ -125,7 +128,6 @@ const Signup = ({ setUser }) => {
                 S'inscrire
               </Link>
             </div>
-
             <span>{errorMessage}</span>
             <Link className="signup-form-login_link" to={"/login"}>
               Tu as déjà un compte ? Connecte-toi !

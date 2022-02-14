@@ -62,12 +62,14 @@ const Home = ({}) => {
               >
                 <div className="home-item_div">
                   <div className="home-item-user_div">
-                    <img
-                      className="home-item-avatar_img"
-                      src={offer.owner.account.avatar.secure_url}
-                      alt=""
-                    />
-                    <span>{offer.owner.account.username}</span>
+                    {offer.owner.account.avatar && (
+                      <img
+                        className="home-item-avatar_img"
+                        src={offer.owner.account.avatar.secure_url}
+                        alt=""
+                      />
+                    )}
+                    <span span> {offer.owner.account.username}</span>
                   </div>
 
                   <img
