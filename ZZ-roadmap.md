@@ -219,3 +219,25 @@ OK : main div :
     - avatar
     - username
   - button acheter
+
+# OK: mise en place des limits et des skips sur le front
+
+OK: je veux afficher par exemple 10 articles par page.
+limit = 10
+et mettre en place des buttons
+
+- précédent
+- suivant
+
+OK : Les buttons doivent disparaître s'il n'est plus possible de les utiliser.
+
+# Déposer une annonce
+
+OK : Créons la page publish.
+
+OK : Redirigeons les user qui n'ont pas de token (qui ne se sont pas authentifié) vers la page de login. Les autres ont accès à la page publish.
+
+PROBLEME :
+quand je me connecte, il faut que je puisse me déconnecter.
+quand je m'inscris, je dois pouvoir me connecter immédiatement.
+afficher un message d'erreur si user déjà un compte

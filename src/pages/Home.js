@@ -23,11 +23,17 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   // state pour attendre son chargement complet
 
+  const [page, setPage] = useState(1);
+  // state pour faire défiler les pages
+
+  const limit = 10;
+  // on pose en dur la limit d'item par page.
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}`
         );
         console.log(response.data);
         setData(response.data);
@@ -37,7 +43,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [page]);
   // on utilise un tab vide dans le useEffet pour effectuer cette action au composant une seule fois, à sa création
 
   return isLoading ? (
@@ -94,6 +100,21 @@ const Home = () => {
               </Link>
             );
           })}
+          {/* Créons deux bouttons pour faire défiler les item, au clic, les pages défilent en fonction de la limit d'item/page */}
+          <button
+            onClick={() => {
+              setPage(page - 1);
+            }}
+          >
+            Page précédente
+          </button>
+          <button
+            onClick={() => {
+              setPage(page + 1);
+            }}
+          >
+            Page suivante
+          </button>
         </div>
       </div>
     </div>

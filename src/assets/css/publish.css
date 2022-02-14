@@ -1,0 +1,202 @@
+.publish_div {
+  background-color: #ebedee;
+}
+
+/* ================================= CSS du form  */
+
+.publish-form_div {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+/* ================================= généralités du form  */
+.publish_form {
+  /* border: solid 1px red; */
+  width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.publish_form input {
+  border: none;
+  border-bottom: rgb(228, 227, 227) solid 1px;
+  font-size: 16px;
+}
+
+.publish_form h3 {
+  width: 50%;
+  padding: 15px;
+}
+
+/* ================================= champs des images  */
+
+.publish-form-pictures_div {
+  /* border: solid 3px blue; */
+  height: 250px;
+  background-color: white;
+  border: solid 2px rgb(223, 222, 222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publish-form-pictures-dashes_div {
+  border: dashed 1px rgb(196, 194, 194);
+  height: 202px;
+  width: 1232px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publish-form-pictures_input {
+  display: none;
+}
+
+.publish-form-pictures-label_div {
+  width: 190px;
+  height: 48px;
+  border: solid 3px #0ab1ba;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publish-form-pictures_label {
+  cursor: pointer;
+  color: #0ab1ba;
+  font-weight: 700;
+}
+
+/* ================================= description du form  */
+
+.publish-form-descriptions_div {
+  /* border: solid 3px yellow; */
+  height: 224.5px;
+  background-color: white;
+  border: solid 2px rgb(223, 222, 222);
+  display: flex;
+  flex-direction: column;
+}
+.publish-form-descriptions_div input {
+  width: 45%;
+}
+
+.publish-form-descriptions-title_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+  width: 100%;
+  height: 74px;
+}
+.publish-form-descriptions-title_input {
+  height: 50px;
+}
+
+.publish-form-descriptions-description_div {
+  /* border: solid 3px rebeccapurple; */
+  display: flex;
+  width: 100%;
+  height: 130px;
+}
+/* ================================= list du form  */
+
+.publish-form-list_div {
+  height: 365px;
+  /* border: solid 3px orange; */
+  background-color: white;
+  border: solid 2px rgb(223, 222, 222);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.publish-form-list_div input {
+  height: 60px;
+  width: 45%;
+}
+
+.publish-form-list-brand_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+}
+
+.publish-form-list-size_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+}
+
+.publish-form-list-color_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+}
+
+.publish-form-list-state_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+}
+
+.publish-form-list-location_div {
+  border-bottom: solid 1px rgb(228, 227, 227);
+  display: flex;
+}
+
+/* ================================= price du form  */
+
+.publish-form-price_div {
+  height: 130px;
+  background-color: white;
+  border: solid 2px rgb(223, 222, 222);
+  display: flex;
+  /* border: solid 3px orange; */
+}
+
+.publish-form-price_div h3 {
+  width: 50%;
+  /* border: solid 3px green; */
+}
+
+.publish-form-price-details_div {
+  width: 45%;
+  /* background-color: red; */
+  /* border: solid 3px blue; */
+  display: flex;
+  flex-direction: column;
+}
+.publish-form-price-details-value_input {
+  width: 30%;
+  height: 60px;
+}
+
+.publish-form-price-details-option-checkbox_input {
+  height: 24px;
+  width: 24px;
+}
+.publish-form-price-details-option_div {
+  display: flex;
+  align-items: center;
+  /* border: solid 3px yellow; */
+  gap: 10px;
+}
+
+/* 
+================================= submit du form  
+*/
+.publish-form-submit_div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.publish-form-submit_div button {
+  color: white;
+  background-color: #2cb1ba;
+  width: 76px;
+  height: 43px;
+  border-radius: 5px;
+  border: none;
+}
+
+.publish-form-submit_div button:hover {
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ import "./assets/css/signup.css";
 import "./assets/css/header.css";
 import "./assets/css/hero.css";
 import "./assets/css/login.css";
+import "./assets/css/publish.css";
 
 // ... de la librairie react-router-dom pour faire de la navigation :
 
@@ -22,6 +23,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
+import Publish from "./pages/Publish";
 
 // ... de la librairie pour les cookies :
 
@@ -62,12 +64,13 @@ function App() {
           <Route
             // Route is the component that contains the page
             path="/"
-            element={<Home />}
+            element={<Home token={token} />}
           />
           <Route path="/offer/:id" element={<Offer />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           {/* On envoie aux props des composants la fonction qui permet de set les cookies, car elle permet le bon fonctionnement de l'authentification lors du signUp/login. */}
+          <Route path="/publish" element={<Publish token={token} />} />
           <Route path="*" element={<NotFound />} />
           {/* Le chemin "*" permet d'orienter toutes les routes qui n'ont pas été précisées ci-avant vers cette page là "NotFound". */}
         </Routes>
