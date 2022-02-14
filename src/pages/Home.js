@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 import Hero from "../components/Hero";
 
-const Home = ({}) => {
+const Home = () => {
   const [data, setData] = useState();
   // state pour stocker de la data
 

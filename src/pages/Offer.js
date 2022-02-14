@@ -42,7 +42,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
   // Utilisation d'un tab vide dans le useEffet pour effectuer cette action au composant une seule fois, à sa création
 
   return isLoading ? (

@@ -18,7 +18,7 @@ const Hero = () => {
         <img
           className="hero-tornEffect_img"
           src={tornEffect}
-          alt="picture torn effect"
+          alt="torn effect"
         />
         <img
           className="hero-mainPicture_img"

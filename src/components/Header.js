@@ -3,7 +3,6 @@
 // ... des images de la page
 
 import vintedlogo from "../assets/img/vintedlogo.png";
-import magnifyingGlass from "../assets/img/magnifyingGlass.svg";
 
 // ... de la librairie react-router-dom pour mettre en place de la navigation :
 
