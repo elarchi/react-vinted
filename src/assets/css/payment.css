@@ -23,7 +23,54 @@
   border-bottom: solid 1px rgb(228, 227, 227);
 }
 
+.payment-details-order_div {
+  display: flex;
+  /* border: solid red 3px; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-details-protectionFees_div {
+  display: flex;
+  /* border: solid red 3px; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-details-shippingFees_div {
+  display: flex;
+  /* border: solid red 3px; */
+  justify-content: space-between;
+  align-items: center;
+}
+
 .payment-totalSection_div {
   /* border: solid red 3px; */
   border-bottom: solid 1px rgb(228, 227, 227);
+}
+
+.payment-totalSection-title_div {
+  display: flex;
+  /* border: solid red 3px; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-totalSection_div span {
+  font-weight: bold;
+}
+
+.payment_button {
+  border: none;
+  color: white;
+  text-decoration: none;
+  height: 44px;
+  width: 100%;
+  background-color: #2cb1ba;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 50px;
 }

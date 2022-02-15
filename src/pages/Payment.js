@@ -37,11 +37,11 @@ const Payment = () => {
             <h3>Commande</h3>
             <span>{amount}</span>
           </div>
-          <div className="payment-details-protectionFee_div">
+          <div className="payment-details-protectionFees_div">
             <h3>Frais protection acheteuses/acheteurs</h3>
             <span>{protectionFees}</span>
           </div>
-          <div className="payment-details-shipingFees_div">
+          <div className="payment-details-shippingFees_div">
             <h3>Frais de port</h3>
             <span>{shippingFees}</span>
           </div>

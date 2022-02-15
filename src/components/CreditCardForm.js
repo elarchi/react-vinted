@@ -55,7 +55,9 @@ const CreditCardForm = ({ title, amount, setPaymentDone }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <CardElement />
-        <button type="submit">Payer</button>
+        <button className="payment_button" type="submit">
+          Payer
+        </button>
       </form>
     </div>
   );
