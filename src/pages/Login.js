@@ -71,15 +71,18 @@ const Login = ({ setUser }) => {
         </div>
         <div className="login-form-links_div">
           <div className="login-form-links-link_div">
-            <Link to="/" className="login-form-links-submit_link" type="submit">
-              Se connecter
-            </Link>
+            <input
+              to="/"
+              className="login-form-links-submit_input"
+              type="submit"
+              value="Se connecter"
+            />
           </div>
 
           <span>{errorMessage}</span>
 
-          <Link to={"/login"} className="login-form-links-signup_link">
-            <p>Pas encore de compte ? Inscris-toi !</p>
+          <Link to={"/signup"} className="login-form-links-signup_link">
+            Pas encore de compte ? Inscris-toi !
           </Link>
         </div>
       </form>

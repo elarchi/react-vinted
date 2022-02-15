@@ -59,7 +59,7 @@ const Header = ({ token, setUser }) => {
       </div>
 
       <div className="header-posting_div">
-        <Link to={"/"} className="header-posting_link">
+        <Link to={"/publish"} className="header-posting_link">
           Vends tes articles
         </Link>
         {/* <button>Vends tes articles</button> */}

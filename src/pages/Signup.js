@@ -28,10 +28,10 @@ const Signup = ({ setUser }) => {
   // Mise en place de la fonction permettant la navigation sans clic de l'utilisateur.
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    // Création d'une fonction pour submit le form, en gardant les données, sans rafraîchir la page et set le token.
-
     try {
+      event.preventDefault();
+      // Création d'une fonction pour submit le form, en gardant les données, sans rafraîchir la page et set le token.
+
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
@@ -52,7 +52,8 @@ const Signup = ({ setUser }) => {
         }
         */
       );
-      console.log(response.data);
+      console.log("response.data ===>", response.data);
+      console.log("response.data.token ===>", response.data.token);
 
       if (response.data.token) {
         // Si l'API renvoit un token, faire :
@@ -120,13 +121,11 @@ const Signup = ({ setUser }) => {
           {/* =============================== LINKS's FORM */}
           <div className="signup-form-links_div">
             <div className="signup-form-submit_div">
-              <Link
-                className="signup-form-submit-button_link"
+              <input
                 type="submit"
-                to="/"
-              >
-                S'inscrire
-              </Link>
+                value="S'inscrire"
+                className="signup-form-submit_input"
+              />
             </div>
             <span>{errorMessage}</span>
             <Link className="signup-form-login_link" to={"/login"}>

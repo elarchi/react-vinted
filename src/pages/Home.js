@@ -56,10 +56,7 @@ const Home = () => {
         <div className="home-items_div container">
           {data.offers.map((offer) => {
             // console.log("offer ===>", offer);
-            console.log(
-              "offer.product_pictures.url===>",
-              offer.product_pictures.url
-            );
+
             return (
               <Link
                 className="home_link"
