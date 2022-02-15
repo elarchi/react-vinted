@@ -10,11 +10,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Publish = ({ token }) => {
-  {
-    /* si j'ai un token, je return ça : j'ai un token ! 
-        si je n'ai pas de token, je return ça : je n'ai pas de token ! 
-         */
-  }
   // const token = 1;
   // cette const permet de vérifier la redirection vers login.
 
