@@ -241,3 +241,5 @@ PROBLEME :
 quand je me connecte, il faut que je puisse me déconnecter.
 quand je m'inscris, je dois pouvoir me connecter immédiatement.
 afficher un message d'erreur si user déjà un compte
+
+# chercher l'erreur des tokens

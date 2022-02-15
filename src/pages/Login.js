@@ -33,7 +33,7 @@ const Login = ({ setUser }) => {
           password: password,
         }
       );
-      console.log(response.data);
+      console.log("reponse.data ===>", response.data);
 
       if (response.data.token) {
         setUser(response.data.token);

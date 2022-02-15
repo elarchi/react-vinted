@@ -13,12 +13,17 @@ const Header = ({ token, setUser }) => {
 
   return (
     <div className="header_div header-container">
+      {/* 
+      ======================================================= LOGO 
+      */}
       <div className="header-logo_div">
         <Link to={"/"}>
           <img src={vintedlogo} alt="Logo Vinted" />
         </Link>
       </div>
-
+      {/* 
+      ======================================================= FILTERS 
+      */}
       <div className="header-filters_div">
         <input
           className="header-filters-searchBar_input"
@@ -26,7 +31,9 @@ const Header = ({ token, setUser }) => {
           placeholder="🔍 Recherche des articles"
         />
       </div>
-
+      {/* 
+      ======================================================= CONNEXIONS 
+      */}
       <div className="header-connexions_div">
         {/* Si l'utilisateur a un token c'est qu'il s'est déjà log (soit en créant son compte, soit via la page login). Il ne lui reste donc plus qu'à se déconnecter à la fin de sa session. */}
         {token ? (

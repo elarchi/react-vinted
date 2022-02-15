@@ -64,7 +64,7 @@ function App() {
           <Route
             // Route is the component that contains the page
             path="/"
-            element={<Home token={token} />}
+            element={<Home />}
           />
           <Route path="/offer/:id" element={<Offer />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
