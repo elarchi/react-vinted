@@ -24,6 +24,7 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 // ... de la librairie pour les cookies :
 
@@ -66,11 +67,12 @@ function App() {
             path="/"
             element={<Home />}
           />
-          <Route path="/offer/:id" element={<Offer />} />
+          <Route path="/offer/:id" element={<Offer token={token} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           {/* On envoie aux props des composants la fonction qui permet de set les cookies, car elle permet le bon fonctionnement de l'authentification lors du signUp/login. */}
           <Route path="/publish" element={<Publish token={token} />} />
+          <Route path="/payment" element={<Payment />} />
           <Route path="*" element={<NotFound />} />
           {/* Le chemin "*" permet d'orienter toutes les routes qui n'ont pas été précisées ci-avant vers cette page là "NotFound". */}
         </Routes>

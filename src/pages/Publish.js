@@ -21,28 +21,28 @@ const Publish = ({ token }) => {
   const [picture, setPicture] = useState();
   // création d'une state pour stocker l'image envoyée par l'user
 
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
-  const [brand, setBrand] = useState();
-  const [size, setSize] = useState();
-  const [color, setColor] = useState();
-  const [condition, setCondition] = useState();
-  const [city, setCity] = useState();
-  const [price, setPrice] = useState();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [brand, setBrand] = useState("");
+  const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
+  const [condition, setCondition] = useState("");
+  const [city, setCity] = useState("");
+  const [price, setPrice] = useState("");
 
-  const [preview, setPreview] = useState();
+  const [preview, setPreview] = useState("");
 
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [data, setData] = useState();
+  // const [isLoading, setIsLoading] = useState(false);
 
-  const [errorMessage, setErrorMessage] = useState();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      setIsLoading(true);
+      // setIsLoading(true);
 
       if (title && price && picture) {
         // Condition pour valider une publication.
@@ -69,13 +69,13 @@ const Publish = ({ token }) => {
             },
           }
         );
-        setData(response.data);
-        setIsLoading(false);
+        // setData(response.data);
+        // setIsLoading(false);
         console.log("response.data ===>", response.data);
-        if (data._id) {
+        if (response.data._id) {
           // si tout s'est bien passé et que l'offre a bien été publiée, alors...
 
-          navigate(`/offer/${data._id}`); // possible grâce à useNavigate
+          navigate(`/offer/${response.data._id}`); // possible grâce à useNavigate
         }
       } else {
         setErrorMessage(
@@ -116,11 +116,11 @@ const Publish = ({ token }) => {
 
               {/* afficher l'image hébergée sur cloudinary
                */}
-              {isLoading ? (
+              {/* {isLoading ? (
                 <div>Image en cours d'upload...</div>
               ) : (
                 data && <img src={data.secure_url} alt="" />
-              )}
+              )} */}
             </div>
           </div>
           {/* description item */}
@@ -131,7 +131,7 @@ const Publish = ({ token }) => {
                 className="publish-form-descriptions-title_input"
                 type="text"
                 placeholder="ex: Chemise Séane verte"
-                onClick={(event) => {
+                onChange={(event) => {
                   setTitle(event.target.value);
                 }}
               />
@@ -141,7 +141,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: porté quelquefois, taille correctement"
-                onClick={(event) => {
+                onChange={(event) => {
                   setDescription(event.target.value);
                 }}
               />
@@ -156,7 +156,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: Zara"
-                onClick={(event) => {
+                onChange={(event) => {
                   setBrand(event.target.value);
                 }}
               />
@@ -166,7 +166,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: L/40/12"
-                onClick={(event) => {
+                onChange={(event) => {
                   setSize(event.target.value);
                 }}
               />
@@ -176,7 +176,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: Fushia"
-                onClick={(event) => {
+                onChange={(event) => {
                   setColor(event.target.value);
                 }}
               />
@@ -186,7 +186,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: Neuf avec étiquette"
-                onClick={(event) => {
+                onChange={(event) => {
                   setCondition(event.target.value);
                 }}
               />
@@ -196,7 +196,7 @@ const Publish = ({ token }) => {
               <input
                 type="text"
                 placeholder="ex: Paris"
-                onClick={(event) => {
+                onChange={(event) => {
                   setCity(event.target.value);
                 }}
               />
@@ -213,7 +213,7 @@ const Publish = ({ token }) => {
                 className="publish-form-price-details-value_input"
                 type="text"
                 placeholder="0,00 €"
-                onClick={(event) => {
+                onChange={(event) => {
                   setPrice(event.target.value);
                 }}
               />

@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-const Offer = () => {
+const Offer = ({ token }) => {
   const [data, setData] = useState();
   // Pour stoker de la data
 
@@ -103,7 +103,13 @@ const Offer = () => {
             </div>
           </div>
           <div className="offer-infos-button_div">
-            <Link className="offer-infos_button" to="/">
+            <Link
+              className="offer-infos_button"
+              to={token ? "/payment" : "/login"}
+              title={data.product_name}
+              amount={data.product_price}
+              token={token}
+            >
               Acheter
             </Link>
           </div>

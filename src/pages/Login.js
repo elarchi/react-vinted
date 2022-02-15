@@ -22,10 +22,9 @@ const Login = ({ setUser }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    // Création d'une fonction pour submit le form, en gardant les données, sans rafraîchir la page, et set le token.
-
     try {
+      event.preventDefault();
+      // Création d'une fonction pour submit le form, en gardant les données, sans rafraîchir la page, et set le token.
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
         {
@@ -33,6 +32,7 @@ const Login = ({ setUser }) => {
           password: password,
         }
       );
+
       console.log("reponse.data ===>", response.data);
 
       if (response.data.token) {
