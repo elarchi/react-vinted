@@ -25,60 +25,62 @@ const Payment = () => {
   ).toFixed(2);
 
   return (
-    <div className="payment_div">
-      <h2>Résumé de la commande</h2>
+    <div className="payment-background_div">
+      <div className="payment_div container">
+        <h2>Résumé de la commande</h2>
 
-      {/* 
+        {/* 
         ===================================================== SECTION DETAIL COMMANDE & TAXES
         */}
-      <div className="payment-details_div">
-        <div className="payment-details-order_div">
-          <h3>Commande</h3>
-          <span>{amount}</span>
+        <div className="payment-details_div">
+          <div className="payment-details-order_div">
+            <h3>Commande</h3>
+            <span>{amount}</span>
+          </div>
+          <div className="payment-details-protectionFee_div">
+            <h3>Frais protection acheteuses/acheteurs</h3>
+            <span>{protectionFees}</span>
+          </div>
+          <div className="payment-details-shipingFees_div">
+            <h3>Frais de port</h3>
+            <span>{shippingFees}</span>
+          </div>
         </div>
-        <div className="payment-details-protectionFee_div">
-          <h3>Frais protection acheteuses/acheteurs</h3>
-          <span>{protectionFees}</span>
-        </div>
-        <div className="payment-details-shipingFees_div">
-          <h3>Frais de port</h3>
-          <span>{shippingFees}</span>
-        </div>
-      </div>
-      {/* 
+        {/* 
         ===================================================== SECTION TOTAL
         */}
-      <div className="payment-totalSection_div">
-        <div className="payment-totalSection-title_div">
-          <h4>Total</h4>
-          <span>{total}</span>
+        <div className="payment-totalSection_div">
+          <div className="payment-totalSection-title_div">
+            <h4>Total</h4>
+            <span>{total}</span>
+          </div>
+          <p>
+            `Il ne vous reste plus qu'une étape pour vous offrir{" "}
+            <span>{title}</span>. Vous allez payer <span>{amount} €</span>{" "}
+            (frais de protection et frais de port inclus).``
+          </p>
         </div>
-        <p>
-          `Il ne vous reste plus qu'une étape pour vous offrir{" "}
-          <span>{title}</span>. Vous allez payer <span>{amount} €</span> (frais
-          de protection et frais de port inclus).``
-        </p>
-      </div>
-      {/* 
+        {/* 
         ===================================================== SECTION CARD 
         */}
-      {paymentDone ? (
-        <p>Le paiement a bien été effectué !</p>
-      ) : (
-        <Elements stripe={stripePromise}>
-          <CreditCardForm
-            token={token}
-            title={title}
-            amount={amount}
-            setPaymentDone={setPaymentDone}
-          />
-        </Elements>
-      )}
+        {paymentDone ? (
+          <p>Le paiement a bien été effectué !</p>
+        ) : (
+          <Elements stripe={stripePromise}>
+            <CreditCardForm
+              token={token}
+              title={title}
+              amount={amount}
+              setPaymentDone={setPaymentDone}
+            />
+          </Elements>
+        )}
 
-      {/* 
+        {/* 
         ===================================================== SECTION SUBMIT 
         */}
-      {/* <input type="submit" value="Pay" /> */}
+        {/* <input type="submit" value="Pay" /> */}
+      </div>
     </div>
   );
 };

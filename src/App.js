@@ -10,6 +10,7 @@ import "./assets/css/header.css";
 import "./assets/css/hero.css";
 import "./assets/css/login.css";
 import "./assets/css/publish.css";
+import "./assets/css/payment.css";
 
 // ... de la librairie react-router-dom pour faire de la navigation :
 
