@@ -49,7 +49,7 @@ const Home = ({ params }) => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, params]);
   // on utilise un tab vide dans le useEffet pour effectuer cette action au composant une seule fois, à sa création
 
   return isLoading ? (
