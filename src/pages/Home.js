@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 import Hero from "../components/Hero";
 
-const Home = () => {
+const Home = ({ params }) => {
   const [data, setData] = useState();
   // state pour stocker de la data
 
@@ -31,9 +31,15 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log("params ===>", params);
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=${limit}&page=${page}`,
+          {
+            params: {
+              title: params.product_name,
+            },
+          }
         );
         console.log(response.data);
         setData(response.data);
@@ -99,13 +105,15 @@ const Home = () => {
           })}
           {/* Créons deux bouttons pour faire défiler les item, au clic, les pages défilent en fonction de la limit d'item/page */}
           <button
+            className={page === 1 ? "home-no_button" : "home_button"}
             onClick={() => {
-              setPage(page - 1);
+              page > 1 && setPage(page - 1);
             }}
           >
             Page précédente
           </button>
           <button
+            className="home_button"
             onClick={() => {
               setPage(page + 1);
             }}

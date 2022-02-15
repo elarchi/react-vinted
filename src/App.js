@@ -52,20 +52,32 @@ function App() {
     setToken(token);
   };
 
+  // CREATION D'UNE FONCTION POUR FAIRE UNE RECHERCHE DANS LA SEARCHBAR :
+  const [params, setParams] = useState({ sort: "asc" });
+  const handleSearchbar = (event) => {
+    const newParams = { ...params };
+    newParams.product_name = event.target.value;
+    setParams(newParams); // ce nouveau params va conditionner l'affichage de HOME, il faut donc lui transmettre.
+  };
+
   return (
     <div className="App">
       {/* STRUCTURE DU SITE : */}
 
       <Router>
         {/* Router is the navigation parent's */}
-        <Header setUser={setUser} token={token} />
+        <Header
+          setUser={setUser}
+          token={token}
+          handleSearchbar={handleSearchbar}
+        />
         {/* On place le Header en dehors des Routes car il est commun aux différentes pages. */}
         <Routes>
           {/* Routes contains the page's list */}
           <Route
             // Route is the component that contains the page
             path="/"
-            element={<Home />}
+            element={<Home params={params} />}
           />
           <Route path="/offer/:id" element={<Offer token={token} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />

@@ -94,11 +94,14 @@ const Offer = ({ token }) => {
           <div className="offer-infos-descriptions_div">
             <span>{data.product_description}</span>
             <div className="offer-infos-user_div">
-              <img
-                className="offer-infos-avatar_img"
-                src={data.owner.account.avatar.secure_url}
-                alt="avatar's user"
-              />
+              {data.owner.account.avatar && (
+                <img
+                  className="offer-infos-avatar_img"
+                  src={data.owner.account.avatar.secure_url}
+                  alt="avatar's user"
+                />
+              )}
+
               <span>{data.owner.account.username}</span>
             </div>
           </div>
@@ -106,9 +109,11 @@ const Offer = ({ token }) => {
             <Link
               className="offer-infos_button"
               to={token ? "/payment" : "/login"}
-              title={data.product_name}
-              amount={data.product_price}
-              token={token}
+              state={{
+                title: data.product_name,
+                amount: data.product_price,
+                token: token,
+              }}
             >
               Acheter
             </Link>

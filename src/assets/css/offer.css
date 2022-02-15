@@ -17,7 +17,12 @@
   width: 450px;
   height: 605px;
   object-fit: cover;
+  /* transition: transform 0.75s; */
 }
+
+/* .offer_img:hover {
+  transform: scale(1.05);
+} */
 
 .offer-infos_div {
   display: flex;
@@ -64,6 +69,10 @@
   width: 50px;
   border-radius: 30px;
   margin-top: 10px;
+  transition: transform 0.75s;
+}
+.offer-infos-avatar_img:hover {
+  transform: scale(1.2);
 }
 
 .offer-infos_div {

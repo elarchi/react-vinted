@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="hero-title_div">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
         <div className="hero-title-button_div">
-          <Link className="hero_link" to="/">
+          <Link className="hero_link" to="/publish">
             Commencer à vendre
           </Link>
         </div>

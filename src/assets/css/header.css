@@ -17,7 +17,7 @@
   width: 104px;
 }
 
-.header-filters-searchBar_input {
+.header-filters-searchbar_input {
   background-color: #f5f6f7;
   width: 632px;
   height: 39px;
@@ -43,6 +43,15 @@
   align-items: center;
   text-decoration: none;
   font-size: 12px;
+}
+
+.header-deconnexions_buttons {
+  height: 30px;
+  width: 115px;
+  color: white;
+  background-color: #c2175b;
+  border: none;
+  border-radius: 5px;
 }
 
 .header-posting_div {
