@@ -71,6 +71,7 @@
   margin-top: 10px;
   transition: transform 0.75s;
 }
+
 .offer-infos-avatar_img:hover {
   transform: scale(1.2);
 }

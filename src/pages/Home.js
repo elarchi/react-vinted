@@ -104,22 +104,28 @@ const Home = ({ params }) => {
             );
           })}
           {/* Créons deux bouttons pour faire défiler les item, au clic, les pages défilent en fonction de la limit d'item/page */}
-          <button
-            className={page === 1 ? "home-no_button" : "home_button"}
-            onClick={() => {
-              page > 1 && setPage(page - 1);
-            }}
-          >
-            Page précédente
-          </button>
-          <button
-            className="home_button"
-            onClick={() => {
-              setPage(page + 1);
-            }}
-          >
-            Page suivante
-          </button>
+          <div className="home-button_div">
+            <button
+              className={page === 1 ? "home-no_button" : "home_button"}
+              onClick={() => {
+                page > 1 && setPage(page - 1);
+              }}
+            >
+              Page précédente
+            </button>
+            <button
+              className={
+                page <= Math.trunc(Number(data.count) / limit)
+                  ? "home_button"
+                  : "home-no_button"
+              }
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              Page suivante
+            </button>
+          </div>
         </div>
       </div>
     </div>

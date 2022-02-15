@@ -49,9 +49,11 @@
   border-radius: 5px;
 }
 
-.login-form-links-submit_link {
+.login-form-links-submit_input {
   color: white;
   text-decoration: none;
+  border: none;
+  background-color: #2cb1ba;
 }
 
 .login-form-links-signup_input {
