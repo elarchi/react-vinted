@@ -41,14 +41,16 @@ function App() {
 
   // CREATION D'UNE FONCTION POUR SET/REMOVE LE TOKEN :
 
-  const setUser = (token) => {
+  const setUser = (token, id) => {
     // Mise en place d'une condition pour choisir de set ou remove le token.
     if (token) {
       // Lorsque l'utilisateur se log ou crée un compte, soit lorsqu'il s'authentifie, il reçoit un token qu'il faut set dans les cookies.
       Cookies.set("useToken", token, { expires: 10 });
+      Cookies.set("useId", token, { expires: 10 });
     } else {
       // Lorsque l'utilisateur cherche à se déconnecter, il faut lui retirer son token d'accès au reste du site, soit retirer le token des cookies.
       Cookies.remove("userToken");
+      Cookies.remove("userIrd");
     }
     setToken(token);
   };

@@ -12,6 +12,10 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
 import { axios } from "axios";
 
+// ... Cookies
+
+import Cookies from "js-cookie";
+
 const CreditCardForm = ({ title, amount, setPaymentDone }) => {
   const stripe = useStripe();
   const elements = useElements();
@@ -25,7 +29,7 @@ const CreditCardForm = ({ title, amount, setPaymentDone }) => {
       const cardElement = elements.getElement(CardElement);
 
       const stripeResponse = await stripe.createToken(cardElement, {
-        name: "L'id de l'acheteuse/acheteur",
+        name: Cookies.get("userId"),
       });
 
       console.log("stripeResponse ===>", stripeResponse);
