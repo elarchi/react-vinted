@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# 👚 Vinted — copy of the official website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Vinted app makes it possible for a user to buy second-hand clothes.
 
-## Available Scripts
+This app is an imitation of the official Vinted website. Making a copy of it was one of the exercises of Le Réacteur bootcamp. It's still a work in progress.
 
-In the project directory, you can run:
+<img width="1611" alt="1" src="https://user-images.githubusercontent.com/96998011/165142372-b89951e1-127d-4f6d-8fd3-fc1bf8fc7e9f.png">
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `yarn test`
+## Table of Contents
+ ### 🧐 What this app does
+ ### 👩🏾‍💻 Tech 
+  
+ 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+ ## 🧐 What this app does?
+ 
+ ![output_I6CPOH](https://user-images.githubusercontent.com/96998011/165150400-785585ea-abef-4573-a49f-0ab671bae2a9.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+ ### 1. Search a type of clothe on the website
+ 
+ Thanks to the searchbar it's easy to find the type of clothes you'are looking for.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img width="1610" alt="7" src="https://user-images.githubusercontent.com/96998011/165149995-b5d878ca-04ea-4caf-a11f-e9a305757126.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ### 2. Have more details about the product
+ 
+<img width="1614" alt="8" src="https://user-images.githubusercontent.com/96998011/165150096-6e6fd4fc-fc3b-4749-ab55-2a72722afb4d.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ### 3. Pay 
+ 
+ <img width="1612" alt="10" src="https://user-images.githubusercontent.com/96998011/165150330-cc3e4e32-ef98-454b-83c6-04200742b78e.png">
 
-## Learn More
+   ### 4. Signup/Login
+   
+   <img width="1614" alt="4" src="https://user-images.githubusercontent.com/96998011/165150485-11328823-1f40-49ed-baee-52d348950df5.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   
+<img width="1613" alt="3" src="https://user-images.githubusercontent.com/96998011/165150461-6c307849-247d-4bcc-bded-cdb8a03ad522.png">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ 
+ ## 👩🏾‍💻 Tech
+ ### 1. Stack
 
-### Analyzing the Bundle Size
+[<img width="45px" style="margin-right: 10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"/>](https://fr.reactjs.org/)&emsp;
+[<img width="45px" style="margin-right: 10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"/>](https://sass-lang.com/)&emsp;
+[<img width="45px" style="margin-right: 10px" src="https://res.cloudinary.com/dn7zdnm89/image/upload/v1649711492/Stack/Javascript_Logo_u2qgnb.png"/>](https://www.javascript.com)&emsp;
+<img width="45px" style="margin-right: 10px" src="https://res.cloudinary.com/dn7zdnm89/image/upload/v1649711643/Stack/html-1_rkqezf.svg"/>&emsp;
+<img width="45px" style="margin-right: 10px" src="https://res.cloudinary.com/dn7zdnm89/image/upload/v1649711787/Stack/CSS3_logo.svg_xrgnjc.png"/>&emsp;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Packages:
+```jsx
+yarn add react-router-dom sass
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### 2. Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Netlify: 
+https://react-vinted-elarchi.netlify.app/
 
-### Deployment
+### 3.Backend link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Heroku:
+https://github.com/elarchi/vinted-repository
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
